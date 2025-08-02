@@ -1,0 +1,382 @@
+/* Odin Landing Page Style CSS - Reorganized */
+
+/* ===================
+   1. IMPORTS & RESET
+   =================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================
+   2. BASE STYLES
+   =================== */
+body {
+  font-family: "Roboto", sans-serif; /* Fixed: was serif */
+  font-weight: 400;
+  font-style: normal;
+  color: #1f2937;
+  background-color: #fafafa;
+  margin: 0 auto;
+}
+
+/* ===================
+   3. TYPOGRAPHY
+   =================== */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto", sans-serif; /* Fixed: was serif */
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f9faf8;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 1.2rem 0;
+  letter-spacing: 0.05em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f9faf8;
+}
+
+/* ===================
+   4. LAYOUT CONTAINERS
+   =================== */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.full-width-section {
+  width: 100%;
+}
+
+/* ===================
+   5. COMPONENTS
+   =================== */
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #3882f6;
+  color: #e5e7eb;
+  text-decoration: none;
+  border: 2px solid #3882f6;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e5e7eb;
+  border: 2px solid #e5e7eb;
+  color: #3882f6;
+}
+
+/* CTA specific button variant */
+.cta-content-right .button {
+  border: 2px solid #e5e7eb;
+}
+
+/* Images */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 800px;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 300px;
+  background-color: #6d747d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===================
+   6. NAVIGATION
+   =================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem auto;
+  max-width: 100%;
+}
+
+.header-links {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.header-links li {
+  position: relative;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.header-links a:hover {
+  color: #fff;
+}
+
+.header-links a:hover::after {
+  width: 100%;
+}
+
+/* ===================
+   7. PAGE SECTIONS
+   =================== */
+
+/* Header Section */
+header.full-width-section {
+  background-color: #1f2937;
+}
+
+header {
+  padding: 1rem 0;
+}
+
+.header-content-container {
+  display: flex;
+  align-items: center;
+  padding: 7.5rem 0;
+}
+
+.header-content-right,
+.header-content-left {
+  width: 50%;
+}
+
+.header-content-left {
+  color: #e5e7eb;
+}
+
+.header-content-right {
+  height: 300px;
+}
+
+.header-content-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #6d747d;
+  border-radius: 8px;
+}
+
+/* Info Section */
+section.full-width-section {
+  background-color: #ffffff;
+}
+
+.info-section .content-container {
+  text-align: center;
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.info-section h2 {
+  color: #333538;
+  margin-bottom: 40px;
+}
+
+/* Info section cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  max-width: 200px;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 200px;
+  border: 5px solid #3882f6;
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+.card p {
+  color: #7c7d7f;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Quote Section */
+section.quote-section {
+  background-color: #e5e7eb;
+}
+
+.quote-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+
+.quote-text {
+  color: #1f2937;
+  font-style: italic;
+  font-size: 2.25rem;
+}
+
+.quote-meta {
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-size: 1.8rem;
+  color: #6b7280;
+  font-weight: 800;
+}
+
+/* CTA Section */
+.cta-section .content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+
+.cta-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #3882f6;
+  padding: 40px 120px;
+  border-radius: 16px;
+}
+
+.cta-section h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  color: #ffffff;
+}
+
+.cta-content-left {
+  text-align: left;
+}
+
+.cta-content-right {
+  margin-left: auto;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem;
+  color: #666;
+}
+
+footer p {
+  color: #e5e7eb;
+  margin-bottom: 0;
+}
+
+/* ===================
+   8. UTILITIES
+   =================== */
+.description {
+  font-style: italic;
+  color: #666;
+  margin: 1.5rem 0 2.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* ===================
+   9. RESPONSIVE
+   =================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
